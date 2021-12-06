@@ -1,0 +1,534 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Poppins:wght@400;700&display=swap");
+
+body,
+html,
+ul {
+  width: 100%;
+  height: 100%;
+  list-style: none;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+a,
+h4 {
+  font-family: "Poppins", sans-serif;
+  letter-spacing: 0.1em;
+}
+
+p {
+  font-size: 1.2em;
+  line-height: 1.7em;
+  letter-spacing: 0.1em;
+}
+
+a {
+  text-decoration: none;
+}
+
+h2 {
+  color: #ff86c9;
+  margin-block: 0;
+  font-size: 2em;
+  line-height: 1.4em;
+}
+
+p,
+ul {
+  font-family: "Montserrat", sans-serif;
+}
+
+.container {
+  margin-inline: auto;
+  max-width: 80%;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.btn {
+  text-decoration: none;
+  position: relative;
+  display: inline-block;
+  padding: 15px 30px;
+  color: #2196f3;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  font-size: 18px;
+  overflow: hidden;
+  transition: 0.2s;
+
+  &:hover {
+    color: #255784;
+    background: #2196f3;
+    box-shadow: 0 0 10px #2196f3, 0 0 40px #2196f3, 0 0 80px #2196f3;
+    transition-delay: 1s;
+  }
+  span {
+    position: absolute;
+    display: block;
+  }
+  span:nth-child(1) {
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #2196f3);
+  }
+  &:hover span:nth-child(1) {
+    left: 100%;
+    transition: 1s;
+  }
+
+  span:nth-child(3) {
+    bottom: 0;
+    right: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(270deg, transparent, #2196f3);
+  }
+  &:hover span:nth-child(3) {
+    right: 100%;
+    transition: 1s;
+    transition-delay: 0.5s;
+  }
+
+  span:nth-child(2) {
+    top: -100%;
+    right: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(180deg, transparent, #2196f3);
+  }
+  &:hover span:nth-child(2) {
+    top: 100%;
+    transition: 1s;
+    transition-delay: 0.25s;
+  }
+
+  span:nth-child(4) {
+    bottom: -100%;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(360deg, transparent, #2196f3);
+  }
+  &:hover span:nth-child(4) {
+    bottom: 100%;
+    transition: 1s;
+    transition-delay: 0.75s;
+  }
+}
+
+.nav {
+  position: absolute;
+  z-index: 1;
+  display: flex;
+  justify-content: space-between;
+  gap: 53%;
+  align-items: center;
+  width: 100%;
+  img {
+    display: block;
+    width: 9rem;
+    top: 0;
+    padding: 1em;
+    position: absolute;
+    left: 3rem;
+  }
+  ul {
+    margin-left: 60%;
+    margin-top: 2rem;
+    width: 40%;
+    padding-block: 1em;
+    padding-right: 4em;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(1em);
+    display: flex;
+    justify-content: flex-end;
+    text-transform: none;
+    font-family: "Poppins", sans-serif;
+
+    & > * + * {
+      margin-left: 4rem;
+    }
+
+    li a {
+      color: white;
+      font-size: 1rem;
+      padding-block: 0.2em;
+      transition: all 0.5s;
+    }
+    a:hover,
+    .active {
+      border-bottom: 0.1em solid white;
+    }
+  }
+}
+
+.hero {
+  position: relative;
+  overflow: hidden;
+  background-image: url(https://media.istockphoto.com/photos/3d-abstract-background-with-ultraviolet-neon-lights-empty-frame-picture-id1191719793?b=1&k=20&m=1191719793&s=170667a&w=0&h=TFX3sgTsQnbz7QBMxnYbuhbJdaTQuNzGBJ1jUUox1xo=);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  animation: slide 15s infinite;
+  height: 100vh;
+  .content {
+    width: 50%;
+    padding-top: 10rem;
+    h1,
+    p {
+      color: white;
+    }
+    h1 {
+      font-size: 3.5em;
+      line-height: 1.2em;
+    }
+    p {
+      margin-block: 1em 1.2em;
+      margin-right: 1em;
+    }
+  }
+
+  .overlay {
+    background: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+}
+
+.welcome {
+  background: linear-gradient(90deg, #3f0456, #9a08d7);
+
+  .container {
+    display: flex;
+    padding-block: 3rem;
+    gap: 2.4rem;
+    .video {
+      div {
+        width: 600px;
+        height: 360px;
+        background-color: #edeae5;
+        position: relative;
+        &::after {
+          content: "VIDEO DITO";
+          position: absolute;
+          font-size: 3rem;
+          left: 50%;
+          top: 50%;
+          transform: translate(-50%, -50%);
+        }
+      }
+    }
+    p {
+      margin-top: 0.8em;
+      color: white;
+    }
+  }
+}
+
+.works {
+  background-image: linear-gradient(#5bd4ef, #e522bc);
+  background-size: cover;
+  background-position: center;
+  padding-block: 3rem;
+
+  h2 {
+    color: black;
+    text-align: center;
+    margin-bottom: 1.3em;
+  }
+  .container {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-areas: "left right" "left2 right2" "bottom bottom";
+    gap: 2rem;
+
+    .card {
+      display: flex;
+      flex-direction: column;
+      padding: 1.3em 2rem 2rem 2rem;
+      position: relative;
+      box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
+      overflow: hidden;
+      border-radius: 5px;
+      background: BLACK;
+      border-left: 1px solid rgba(255, 255, 255, 0.4);
+      border-top: 1px solid rgba(255, 255, 255, 0.4);
+      backdrop-filter: blur(1em);
+      -webkit-backdrop-filter: blur(1em);
+
+      .card-title,
+      h4,
+      p {
+        color: white;
+        margin-bottom: 1.2em;
+      }
+      p {
+        font-size: 0.8em;
+      }
+      .blog-list > * {
+        margin-top: 1.4rem;
+        display: flex;
+        gap: 1.2rem;
+        img {
+          width: 25%;
+          cursor: pointer;
+        }
+        h4 {
+          font-size: 1em;
+          font-weight: normal;
+          &:hover {
+            color: #9fedd7;
+          }
+        }
+      }
+      .split {
+        display: flex;
+        gap: 2rem;
+      }
+    }
+
+    .card-title {
+      line-height: 1.8;
+      border-bottom: 1px solid #edeae5;
+    }
+
+    .card_1 {
+      grid-area: left;
+    }
+    .card_2 {
+      grid-area: right;
+    }
+    .card_3 {
+      grid-area: left2;
+    }
+    .card_4 {
+      grid-area: right2;
+    }
+    .card_5 {
+      grid-area: bottom;
+    }
+
+    .subtitle {
+      margin-block: 0.4em;
+    }
+
+    h3 {
+      font-size: 1.5em;
+      color: white;
+      &:hover {
+        color: #9fedd7;
+      }
+    }
+    img:hover {
+      opacity: 0.7;
+    }
+  }
+}
+
+/* CONTACT SECTION */
+
+.contact-us {
+  display: flex;
+  background: #edeae5;
+  align-items: center;
+  justify-content: center;
+  h2 {
+    padding: 1.5rem 0 1.2rem 2rem;
+    border-bottom: 1px solid #ccc;
+    color: #2196f3;
+  }
+  .container {
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.05);
+    margin-block: 3rem;
+    form {
+      margin: 35px 30px;
+      .field input,
+      .message textarea {
+        width: 100%;
+        height: 100%;
+        outline: none;
+        padding: 0 1.4rem 0 3rem;
+        font-size: 16px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        &::placeholder {
+          color: #ccc;
+        }
+      }
+      .message {
+        position: relative;
+        textarea {
+          min-height: 130px;
+          max-height: 230px;
+          max-width: 100%;
+          min-width: 100%;
+          padding: 15px 20px 0 48px;
+          &::-webkit-scrollbar {
+            width: 0px;
+          }
+        }
+        textarea {
+          border: 2px solid #2196f3;
+        }
+      }
+      .submit-btn {
+        margin-top: 1.5em;
+        border: 0.15em #2196f3 solid;
+        color: #2196f3;
+        cursor: pointer;
+        &:hover {
+          color: #255784;
+          background: #2196f3;
+          overflow: hidden;
+          box-shadow: 0 0 0.2em #2196f3, 0 0 0.8em #2196f3, 0 0 3.2em #2196f3;
+          transition: all 0.3s ease;
+          overflow: hidden;
+        }
+      }
+    }
+    form.disabled {
+      pointer-events: none;
+      opacity: 0.7;
+    }
+    .dbl-field {
+      display: flex;
+      margin-bottom: 2.1rem;
+      justify-content: space-between;
+      .field {
+        height: 4rem;
+        display: flex;
+        position: relative;
+        width: calc(100% / 2 - 13px);
+        input::placeholder {
+          color: #ccc;
+        }
+        img {
+          position: absolute;
+          left: 0.8rem;
+          top: 1rem;
+        }
+        input {
+          border: 2px solid #2196f3;
+        }
+      }
+    }
+    textarea {
+      position: relative;
+    }
+    img {
+      position: absolute;
+      left: 0.8rem;
+      top: 0.7rem;
+    }
+  }
+}
+
+footer {
+  background: black;
+  color: white;
+  .container {
+    padding-top: 3rem;
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    column-gap: 2rem;
+    grid-template-areas: "topL topM topR" "bottomL bottomR bottomR";
+
+    h5 {
+      color: #fef9c7;
+      font-size: 1.5em;
+      margin-bottom: 1em;
+    }
+    li {
+      line-height: 2;
+      a {
+        color: white;
+        &:hover {
+          color: gray;
+        }
+      }
+    }
+    .logo,
+    .company,
+    .support {
+      margin-inline: auto;
+    }
+    .logo {
+      grid-area: topL;
+      overflow: hidden;
+      img {
+        margin-left: 50%;
+        margin-top: -5.5rem;
+        transform: translateX(-50%);
+        width: 100%;
+      }
+    }
+    .company {
+      grid-area: topM;
+    }
+    .support {
+      grid-area: topR;
+    }
+    .copyright {
+      position: relative;
+      grid-area: bottomL;
+      p {
+        position: absolute;
+        bottom: 2rem;
+        left: 0;
+        font-size: 1em;
+        font-family: "Poppins", sans-serif;
+      }
+    }
+    .socials {
+      grid-area: bottomR;
+      ul {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 2rem;
+        svg {
+          width: 50%;
+        }
+        a:hover {
+          opacity: 0.5;
+        }
+      }
+    }
+  }
+}
+
+@keyframes slide {
+  0% {
+    background-image: url(https://media.istockphoto.com/photos/3d-abstract-background-with-ultraviolet-neon-lights-empty-frame-picture-id1191719793?b=1&k=20&m=1191719793&s=170667a&w=0&h=TFX3sgTsQnbz7QBMxnYbuhbJdaTQuNzGBJ1jUUox1xo=);
+  }
+  33% {
+    background-image: url(https://s3.envato.com/files/6bb28ff9-471b-485e-880a-8947ce1d9e8e/inline_image_preview.jpg);
+  }
+  67% {
+    background-image: url(https://media.istockphoto.com/photos/3d-render-abstract-pink-blue-violet-neon-background-music-performance-picture-id1155272611?k=20&m=1155272611&s=170667a&w=0&h=Ofrsdpk6GEYhy7frVLKqp71y1SytsOv6g70MwOvwfwE=);
+  }
+}
+
+/*ABOUT US*/
